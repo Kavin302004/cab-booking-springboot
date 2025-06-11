@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ride Started</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; color: #333;">
+    <div style="max-width: 600px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h2 style="color: #27ae60; margin-bottom: 20px;">Your Ride Has Started</h2>
+        
+        <p>Dear <span th:text="${booking.user.name}"></span>,</p>
+        
+        <p>Your ride has started successfully. Here are the details:</p>
+        
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0;">
+            <p><strong>Booking ID:</strong> <span th:text="${booking.id}"></span></p>
+            <p><strong>Date:</strong> <span th:text="${date}"></span></p>
+            <p><strong>Time:</strong> <span th:text="${time}"></span></p>
+            <p><strong>Pickup:</strong> <span th:text="${booking.pickupLocation}"></span></p>
+            <p><strong>Drop:</strong> <span th:text="${booking.dropLocation}"></span></p>
+        </div>
+        
+        <div style="background: #e8f5e9; padding: 15px; border-radius: 5px; margin: 20px 0;">
+            <h3 style="color: #2e7d32; margin-top: 0;">Driver Details</h3>
+            <p><strong>Name:</strong> <span th:text="${driver.name}"></span></p>
+            <p><strong>Vehicle:</strong> <span th:text="${booking.cab.registrationNumber}"></span></p>
+        </div>
+        
+        <p>Have a safe journey!</p>
+        
+        <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
+        
+        <p style="font-size: 12px; color: #666;">This is an automated message, please do not reply to this email.</p>
+    </div>
+</body>
+</html> 

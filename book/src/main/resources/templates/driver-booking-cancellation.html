@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Cancelled</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; color: #333;">
+    <div style="max-width: 600px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h2 style="color: #e74c3c; margin-bottom: 20px;">Booking Cancelled</h2>
+        
+        <p>Dear <span th:text="${booking.cab.driver.name}"></span>,</p>
+        
+        <p>A booking assigned to you has been cancelled. Here are the details:</p>
+        
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0;">
+            <p><strong>Booking ID:</strong> <span th:text="${booking.id}"></span></p>
+            <p><strong>Date:</strong> <span th:text="${date}"></span></p>
+            <p><strong>Time:</strong> <span th:text="${time}"></span></p>
+            <p><strong>Pickup:</strong> <span th:text="${booking.pickupLocation}"></span></p>
+            <p><strong>Drop:</strong> <span th:text="${booking.dropLocation}"></span></p>
+        </div>
+        
+        <div style="background: #ffebee; padding: 15px; border-radius: 5px; margin: 20px 0;">
+            <h3 style="color: #c62828; margin-top: 0;">Customer Details</h3>
+            <p><strong>Name:</strong> <span th:text="${customer.name}"></span></p>
+        </div>
+        
+        <p>You are now available for other bookings during this time slot.</p>
+        
+        <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
+        
+        <p style="font-size: 12px; color: #666;">This is an automated message, please do not reply to this email.</p>
+    </div>
+</body>
+</html> 
